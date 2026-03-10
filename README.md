@@ -1,16 +1,12 @@
 # ernaehrungsplaner
 
-A new Flutter project.
+Eine Flutter-App zur einfachen Erstellung und Verwaltung von Ernährungsplänen, integriert mit Google Firebase. Entwickelt im Rahmen der Abgabe für das Modul "Konzepte der Android-Programmierung".
 
-## Getting Started
+## 🚀 Features
+* **Firebase Authentication:** Sicherer Login und Registrierung.
+* **Firestore Database:** Speicherung von Benutzerdaten und Ernährungsplänen in Echtzeit.
+* **Custom UI:** Individuelle Icons und modernes Design für eine intuitive Bedienung.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠 Tech Stack
+* **Frontend:** Flutter & Dart
+* **Backend:** Google Firebase (Auth & Firestore)
