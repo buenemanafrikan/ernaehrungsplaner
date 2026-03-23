@@ -43,7 +43,7 @@ extension MealCategoryX on MealCategory {
   }
 }
 
-// ersetzte Version von deinem _categoryFromJson, damit es importierbar ist
+
 MealCategory mealCategoryFromJson(dynamic v) {
   final s = v is String ? v : null;
   if (s == null) return MealCategory.lunch;

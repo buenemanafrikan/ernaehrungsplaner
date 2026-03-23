@@ -486,6 +486,7 @@ class _MealTile extends StatelessWidget {
   final MealTemplate meal;
 
   const _MealTile({
+    super.key,
     required this.day,
     required this.indexInDay,
     required this.meal,
@@ -503,11 +504,10 @@ class _MealTile extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       elevation: 0,
       child: SizedBox(
-        height: 92,
         child: Stack(
           children: [
             Positioned.fill(
-              child: Image.asset("assets/ui/meal_tile.png", fit: BoxFit.fill),
+              child: Image.asset("assets/ui/meal_tile.png", fit: BoxFit.cover),
             ),
             Positioned.fill(
               child: ColoredBox(
@@ -525,9 +525,34 @@ class _MealTile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(meal.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+                        // NAME
+                        Text(
+                          meal.name, 
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          maxLines: 2, 
+                          overflow: TextOverflow.ellipsis
+                        ),
+                        
+                        // die Beschreibung 
+                        if (meal.description != null && meal.description!.isNotEmpty) ...[
+                          const SizedBox(height: 4),
+                          Text(
+                            meal.description!,
+                            style: const TextStyle(fontSize: 12, color: Colors.black54),
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                        
                         const SizedBox(height: 6),
-                        Text(_macroLine(meal), maxLines: 1, overflow: TextOverflow.ellipsis),
+                        
+                        // die Nährwerte
+                        Text(
+                          _macroLine(meal), 
+                          style: const TextStyle(fontSize: 11),
+                          maxLines: 2, 
+                          overflow: TextOverflow.ellipsis
+                        ),
                       ],
                     ),
                   ),
@@ -543,6 +568,7 @@ class _MealTile extends StatelessWidget {
       ),
     );
   }
+
 
   String _macroLine(MealTemplate meal) {
     final parts = <String>[];

@@ -1,4 +1,4 @@
 ToDo Liste:
-1. Beschreibung bei Hinzufügen bzw. bearbeiten einer Mahlzeit. Also ein Feld um dort Text reinzuschreiben.
-2. UI bearbeiten und alte UI durch eigene Grafik Elemente ersetzen.
+1. Beschreibung bei Hinzufügen bzw. bearbeiten einer Mahlzeit. Also ein Feld um dort Text reinzuschreiben. √
+2. UI bearbeiten und alte UI durch eigene Grafik Elemente ersetzen. 
 3. 

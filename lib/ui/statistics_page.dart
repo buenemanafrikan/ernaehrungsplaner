@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../controllers/planner_controller.dart';
 import '../models/weekday.dart';
-// Hier die Änderung: 'hide TotalsCard' hinzufügen
 import 'plan_tabs_page.dart' hide TotalsCard; 
 import 'widgets/totals_card.dart';
 import '../models/meal_category.dart';

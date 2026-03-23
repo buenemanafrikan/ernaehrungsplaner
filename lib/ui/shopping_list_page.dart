@@ -24,7 +24,7 @@ class ShoppingListPage extends StatelessWidget {
       ),
     );
 
-    if (text != null) {
+    if (text != null && text.trim().isNotEmpty) {
       await context.read<PlannerController>().addShoppingItem(text);
     }
   }
@@ -59,13 +59,24 @@ class ShoppingListPage extends StatelessWidget {
               itemBuilder: (_, i) {
                 final it = items[i];
                 return Card(
-                  child: CheckboxListTile(
-                    value: it.done,
-                    title: Text(it.text),
-                    onChanged: (_) => planner.toggleShoppingItem(it.id),
-                    secondary: IconButton(
+                  child: ListTile(
+                    // Tippen markiert das Item als erledigt (Text wird grau/durchgestrichen)
+                    onTap: () => planner.toggleShoppingItem(it.id),
+                    title: Text(
+                      it.text,
+                      style: TextStyle(
+                        decoration: it.done ? TextDecoration.lineThrough : null,
+                        color: it.done ? Colors.grey : null,
+                      ),
+                    ),
+                    // Dein eigenes Mülltonnen-Icon zum Löschen
+                    trailing: IconButton(
                       tooltip: "Löschen",
-                      icon: const Icon(Icons.delete_outline),
+                      icon: Image.asset(
+                        "assets/icon/trash.png", 
+                        width: 28, 
+                        height: 28
+                      ),
                       onPressed: () => planner.deleteShoppingItem(it.id),
                     ),
                   ),
