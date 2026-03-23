@@ -60,7 +60,6 @@ class ShoppingListPage extends StatelessWidget {
                 final it = items[i];
                 return Card(
                   child: ListTile(
-                    // Tippen markiert das Item als erledigt (Text wird grau/durchgestrichen)
                     onTap: () => planner.toggleShoppingItem(it.id),
                     title: Text(
                       it.text,
@@ -69,7 +68,6 @@ class ShoppingListPage extends StatelessWidget {
                         color: it.done ? Colors.grey : null,
                       ),
                     ),
-                    // Dein eigenes Mülltonnen-Icon zum Löschen
                     trailing: IconButton(
                       tooltip: "Löschen",
                       icon: Image.asset(
